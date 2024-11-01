@@ -1,8 +1,10 @@
-#include <iostream>
-
-
+#include "Utils.h"
+#include "Table.h"
 
 int main() {
-    printf("Hello SQLite!");
+
+    Table table = Table("nume");
+
+    table.printTableName();
     return 0;
 }
