@@ -1,0 +1,3 @@
+/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/CMakeFiles/SQLiteEngine.dir
+/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
