@@ -1,10 +1,20 @@
 #include "Utils.h"
+#include "Functions.h"
 #include "Table.h"
 
+#define SIZE 100
 int main() {
 
-    Table table = Table("nume");
+    char statement[SIZE];
 
-    table.printTableName();
+    cout << "Enter sqlite commands:\n";
+    cout << ">> ";
+    cin.getline(statement, SIZE);
+    cout << statement << endl;
+
+    tokenizer(statement);
+
+
+
     return 0;
 }
