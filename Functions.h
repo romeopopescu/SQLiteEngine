@@ -1,30 +1,26 @@
-#include <iostream>
-#include <string.h>
-#include <fstream>
-#include <string>
+#include "Utils.h"
+#include "Column.h"
 
-using namespace std;
+void createTable(char* words[20]);
 
 void tokenizer(char* statement) {
 
     char* token;
     char* words[20];
-    int i = 0;
+    int index = 0;
     token = strtok(statement, " ,()");
 
     while (token != NULL) {
-        words[i] = token;
-        i++;
+        for (int i = 0; i < strlen(token); i++) {
+            token[i] = tolower(token[i]);
+        }
+        words[index] = token;
+        index++;
         token = strtok(NULL, " ,()");
     }
 
-
-
     if (strcmp(words[0], "create") == 0 && strcmp(words[1], "table") == 0) {
-        cout << words[2] << endl;
-        for (int k = 3; k < sizeof(words); k++) {
-
-        }
+        createTable(words);
     }
     else if (strcmp(words[0], "select") == 0) {
         //TO DO
@@ -46,4 +42,16 @@ void tokenizer(char* statement) {
     //create table se foloseste de Column si table??
 
 
+}
+//CREATE TABLE table_name (column1 datatype, column2 datatype);
+void createTable(char* words[20]) {
+    int i = 3;
+    while(words[i + 1]) {
+        if (strcmp(words[i+1], "text") == 0) {
+            Column(words[i], words[i+1]);
+        }
+        else if (strcmp(words[i + 1], "integer")) {
+            Column(words[i], words[i+1]);
+        }
+    }
 }

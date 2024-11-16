@@ -1,22 +1,18 @@
+enum type{ INTEGER, FLOAT, TEXT };
+
 class Column {
 private:
     char* name = nullptr;
-    int intValue = 0;
-    float floatValue = 0.0;
-    char* text = nullptr;
+    char* type = nullptr;
 public:
-    Column() {
+    Column() {}
+
+    Column(const char* name, const char* type) {
 
     }
-    Column(const char* name, int value) {
-
+    void setName(const char* newName) {
+        this->name = new char[strlen(newName) - 1];
+        strcpy(this->name, newName);
     }
-    Column(const char* name, float value) {
-
-    }
-    Column(const char* name, const char* text) {
-
-    }
-
 
 };

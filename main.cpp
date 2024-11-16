@@ -10,11 +10,8 @@ int main() {
     cout << "Enter sqlite commands:\n";
     cout << ">> ";
     cin.getline(statement, SIZE);
-    cout << statement << endl;
 
     tokenizer(statement);
-
-
 
     return 0;
 }
