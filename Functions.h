@@ -48,10 +48,14 @@ void createTable(char* words[20]) {
     int i = 3;
     while(words[i + 1]) {
         if (strcmp(words[i+1], "text") == 0) {
-            Column(words[i], words[i+1]);
+            Column(words[i], TEXT);
         }
-        else if (strcmp(words[i + 1], "integer")) {
-            Column(words[i], words[i+1]);
+        else if (strcmp(words[i + 1], "integer") == 0) {
+            Column(words[i], INTEGER);
         }
+        else if (strcmp(words[i + 1], "float") == 0) {
+            Column(words[i], FLOAT);
+        }
+        i += 2;
     }
 }
