@@ -1,9 +1,14 @@
+#pragma once
+#include "Utils.h"
+
 enum Type{ INTEGER, FLOAT, TEXT };
 
 class Column {
 private:
     char* name = nullptr;
     Type type = Type::TEXT;
+    int size = 0;
+    //default value;
 
 public:
     Column() {}
@@ -14,7 +19,7 @@ public:
     }
     void setName(const char* newName) {
         if (this->name != nullptr) {
-            delete this->name;
+            delete[] this->name;
         }
         this->name = new char[strlen(newName) - 1];
         strcpy(this->name, newName);
@@ -22,5 +27,4 @@ public:
     void setType(Type newType) {
         this->type = newType;
     }
-
 };

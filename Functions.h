@@ -1,3 +1,4 @@
+#pragma once
 #include "Utils.h"
 #include "Column.h"
 
@@ -57,5 +58,6 @@ void createTable(char* words[20]) {
             Column(words[i], FLOAT);
         }
         i += 2;
+        if (strcmp(words[i], ";") == 0) return;
     }
 }

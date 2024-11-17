@@ -1,9 +1,15 @@
+#pragma once
 #include "Utils.h"
+#include "Row.h"
+#include "Column.h"
 
 class Table{
 private:
     char* name = nullptr;
     int noRows = 0;
+    Row row;
+    Column column;
+
 public:
     Table() {
 

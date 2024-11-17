@@ -7,4 +7,5 @@ add_executable(SQLiteEngine main.cpp
         Row.h
         Column.h
         Functions.h
+        Database.h
 )
