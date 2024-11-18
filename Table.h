@@ -6,17 +6,19 @@
 class Table{
 private:
     char* name = nullptr;
-    int noRows = 0;
-    Row row;
-    Column column;
+    Row** rows = new Row*[20];
+    int rowCount = 0;
+    Column** columns = new Column*[20];
+    int columnCount = 0;
 
 public:
     Table() {
 
     }
-    Table(const char* name, int rows) {
-        setName(name);
-        this->noRows = rows;
+    Table(const char* name) {
+        this->setName(name);
+        this->columns = nullptr;
+        this->rows = nullptr;
     }
     void setName(const char* newName) {
         this->name = new char[sizeof(newName)];
@@ -27,4 +29,30 @@ public:
     void printTableName() {
         printf("%s", this->name);
     }
+//    void addColumn(const Column& column);
+//    void addRow(const Row& row);
+//    Row* getRow(int index);
+
+//CREATE TABLE table_name (column1 datatype, column2 datatype);
+    void createTable(char* words[20]) {
+        this->setName(words[2]);
+        int i = 3;
+        while(words[i + 1]) {
+            if (strcmp(words[i+1], "text") == 0) {
+                this->columns[this->columnCount] = new Column(words[i], TEXT, 1);
+                this->columnCount++;
+            }
+            else if (strcmp(words[i + 1], "integer") == 0) {
+                this->columns[this->columnCount] = new Column(words[i], INTEGER, 1);
+                this->columnCount++;
+            }
+            else if (strcmp(words[i + 1], "float") == 0) {
+                this->columns[this->columnCount] = new Column(words[i], FLOAT, 1);
+                this->columnCount++;
+            }
+            i += 2;
+            if (strcmp(words[i], ";") == 0) return;
+        }
+    }
+
 };

@@ -1,8 +1,6 @@
 #pragma once
 #include "Utils.h"
-#include "Column.h"
-
-void createTable(char* words[20]);
+#include "Table.h"
 
 void tokenizer(char* statement) {
 
@@ -21,7 +19,13 @@ void tokenizer(char* statement) {
     }
 
     if (strcmp(words[0], "create") == 0 && strcmp(words[1], "table") == 0) {
-        createTable(words);
+        //TO DO
+        Table table;
+        table.createTable(words);
+        table.printTableName();
+    }
+    else if (strcmp(words[0], "insert") == 0 && strcmp(words[1], "into") == 0) {
+
     }
     else if (strcmp(words[0], "select") == 0) {
         //TO DO
@@ -43,21 +47,4 @@ void tokenizer(char* statement) {
     //create table se foloseste de Column si table??
 
 
-}
-//CREATE TABLE table_name (column1 datatype, column2 datatype);
-void createTable(char* words[20]) {
-    int i = 3;
-    while(words[i + 1]) {
-        if (strcmp(words[i+1], "text") == 0) {
-            Column(words[i], TEXT);
-        }
-        else if (strcmp(words[i + 1], "integer") == 0) {
-            Column(words[i], INTEGER);
-        }
-        else if (strcmp(words[i + 1], "float") == 0) {
-            Column(words[i], FLOAT);
-        }
-        i += 2;
-        if (strcmp(words[i], ";") == 0) return;
-    }
 }

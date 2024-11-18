@@ -13,9 +13,16 @@ private:
 public:
     Column() {}
 
-    Column(const char* name, Type type) {
+    Column(const char* name, Type type, int size) {
         this->setName(name);
         this->setType(type);
+        this->setSize(size);
+    }
+    void setSize(int newSize) {
+        if (newSize < 0) {
+            throw "Invalid column size";
+        }
+        this->size = newSize;
     }
     void setName(const char* newName) {
         if (this->name != nullptr) {
