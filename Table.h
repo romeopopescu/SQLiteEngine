@@ -29,6 +29,12 @@ public:
     void printTableName() {
         printf("%s", this->name);
     }
+    void printTable() {
+        cout << this->name << endl;
+        for (int i = 0; i < this->columnCount; i++) {
+            this->columns[i]->printColumn();
+        }
+    }
 //    void addColumn(const Column& column);
 //    void addRow(const Row& row);
 //    Row* getRow(int index);
@@ -53,6 +59,9 @@ public:
             i += 2;
             if (strcmp(words[i], ";") == 0) return;
         }
+    }
+    void addRow(char* words[20]) {
+
     }
 
 };

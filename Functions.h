@@ -23,6 +23,7 @@ void tokenizer(char* statement) {
         Table table;
         table.createTable(words);
         table.printTableName();
+        table.printTable();
     }
     else if (strcmp(words[0], "insert") == 0 && strcmp(words[1], "into") == 0) {
 
@@ -43,8 +44,5 @@ void tokenizer(char* statement) {
         //TO DO
     }
     // TO DO else ifs for UPDATE DELETE INSERT INTO....
-    //la insert into pune in Row class
-    //create table se foloseste de Column si table??
-
 
 }

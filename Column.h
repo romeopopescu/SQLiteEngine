@@ -34,4 +34,7 @@ public:
     void setType(Type newType) {
         this->type = newType;
     }
+    void printColumn() {
+        cout << this->name << " | ";
+    }
 };
