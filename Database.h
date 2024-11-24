@@ -1,10 +1,12 @@
 #pragma once
 #include "Table.h"
+#include "CommandValidator.h"
 
 class Database {
 private:
     char* name = nullptr;
     Table** tables = nullptr;
+
 public:
     Database() {}
 
@@ -18,8 +20,13 @@ public:
         }
     }
 
-    bool hasTable(Table** tables1) {
-
+    static bool processCreateTable(const char* command) {
+        if (CommandValidator::validateCreateTable(command)) {
+            return false;
+        }
+        return true;
     }
+
+
 
 };
