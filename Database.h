@@ -6,6 +6,7 @@ class Database {
 private:
     char* name = nullptr;
     Table** tables = nullptr;
+    int tableNo = 0;
 
 public:
     Database() {}
@@ -22,9 +23,12 @@ public:
 
     static bool processCreateTable(const char* command) {
         if (CommandValidator::validateCreateTable(command)) {
-            return false;
+            cout << "Command is valid";
+
+            Table* table = new Table();
+
         }
-        return true;
+        return false;
     }
 
 
