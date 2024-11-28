@@ -4,6 +4,13 @@
 
 class CommandValidator {
 public:
+
+    static bool validateInsertInto(const char* command) {
+        return true;
+    }
+    static bool validateSelect(const char* command) {
+        return true;
+    }
 //CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)
     static bool validateCreateTable(const char* command) {
         char temp[1024];
@@ -45,9 +52,11 @@ public:
 
         //token is column name
         token = strtok(NULL, " (),");
+        if (!token) return false;
         while(token) {
 
             token = strtok(NULL, " (),");
+            if (!token) return false;
             //token is column type
             if(strcmp(token, "text") != 0 && strcmp(token, "integer") != 0 && strcmp(token, "float") != 0) {
                 cout << "Error: Invalid column type";
@@ -56,6 +65,7 @@ public:
 
             token = strtok(NULL, " (),");
             //token is column size
+            if (!token) return false;
             for (i = 0; i < strlen(token); i++) {
                 if (!isdigit(token[i])) {
                     cout << "Error: Size is not a number";
@@ -64,6 +74,7 @@ public:
             }
 
             token = strtok(NULL, " (),");
+            if (!token) return false;
             //token is column initial value
 
             token = strtok(NULL, " (),");
