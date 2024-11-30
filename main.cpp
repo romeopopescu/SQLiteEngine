@@ -1,5 +1,4 @@
 #include "Utils.h"
-#include "Functions.h"
 #include "Table.h"
 #include "Database.h"
 
@@ -26,6 +25,9 @@ int main() {
         }
         else if (strstr(statement, "insert into") != nullptr) {
 
+        }
+        else if (strstr(statement, "select") != nullptr) {
+            Database::processSelectFrom(statement);
         }
         else if (strstr(statement, "exit") != nullptr) {
             cout << "Exiting sqlite...";

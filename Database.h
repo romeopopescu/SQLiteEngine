@@ -20,12 +20,25 @@ public:
             this->name[i] = newName[i];
         }
     }
+    static bool processSelectFrom(const char* command) {
+        if (CommandValidator::validateSelectFrom(command)) {
+            cout << "Command is valid";
+
+        }
+        return false;
+    }
 
     static bool processCreateTable(const char* command) {
         if (CommandValidator::validateCreateTable(command)) {
             cout << "Command is valid";
+            char temp[1024];
+            strcpy(temp, command);
 
-            Table* table = new Table();
+            char* token = strtok(temp, " ");
+            token = strtok(NULL, " ");
+            token = strtok(NULL, " ");
+            Table* table = new Table(token);;
+            table->printTableName();
 
         }
         return false;

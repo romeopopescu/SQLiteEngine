@@ -8,7 +8,52 @@ public:
     static bool validateInsertInto(const char* command) {
         return true;
     }
-    static bool validateSelect(const char* command) {
+//    SELECT (at_least_one_column, ...) | ALL FROM table_name
+    static bool validateSelectFrom(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
+
+        char* token;
+
+        token = strtok(temp, " ");
+        if (!token || strcmp(token, "select") != 0) {
+            cout << "Error: command must start with SELECT";
+            return false;
+        }
+
+        token = strtok(NULL, " ,");
+        int w = 0;
+        while (strcmp(token, "from") != 0) {
+            if (!token) {
+//                TODO create verifyIfColumnExists
+                cout << "Error: missing column or *";
+                return false;
+            }
+            if (w > 5) {
+                cout << "Error: too many columns or missing FROM";
+            }
+            w++;
+            token = strtok(NULL, " ,");
+        }
+        if (w == 0) {
+            cout << "Error: missing column name or *";
+            return false;
+        }
+
+        token = strtok(NULL, " ,");
+        char * tableName = token;
+        if (!tableName) {
+            cout << "Error: missing table name";
+            return false;
+        }
+        if (tableName[strlen(tableName) - 1] != ';'){
+            token = strtok(NULL, " ");
+            if (!token || strcmp(token, ";") != 0) {
+                cout << "Error: missing semi colon ;";
+                return false;
+            }
+        }
+
         return true;
     }
 //CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)
@@ -89,6 +134,11 @@ public:
 
 private:
     static bool isValidTableName(const char* name) {
+
+        return true;
+    }
+    static bool isValidColumnName(const char* name) {
+
 
         return true;
     }
