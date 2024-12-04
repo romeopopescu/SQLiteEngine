@@ -20,6 +20,10 @@ public:
             this->name[i] = newName[i];
         }
     }
+    static bool processInsertInto(const char* command) {
+        CommandValidator::validateInsertInto(command);
+        return true;
+    }
     static bool processSelectFrom(const char* command) {
         if (CommandValidator::validateSelectFrom(command)) {
             cout << "Command is valid";

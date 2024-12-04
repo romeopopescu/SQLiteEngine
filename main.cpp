@@ -24,7 +24,7 @@ int main() {
             Database::processCreateTable(statement);
         }
         else if (strstr(statement, "insert into") != nullptr) {
-
+            Database::processInsertInto(statement);
         }
         else if (strstr(statement, "select") != nullptr) {
             Database::processSelectFrom(statement);

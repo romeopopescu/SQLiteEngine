@@ -5,7 +5,46 @@
 class CommandValidator {
 public:
 
+//    INSERT INTO nume_tabela VALUES(...); valorile sunt separate prin, și au numărul și ordinea exacta ca definiția tabelului
     static bool validateInsertInto(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
+
+        char* token = strtok(temp, " ");
+        if (!token || strcmp(token, "insert") != 0) {
+            cout << "Error: invalid statement. Must start with 'insert'";
+            return false;
+        }
+        token = strtok(NULL, " ");
+        if (!token || strcmp(token, "into") != 0) {
+            cout << token;
+            cout << "Error: invalid statement";
+            return false;
+        }
+        token = strtok(NULL, " (");
+        if (!token || strcmp(token, "values") == 0) {
+            cout << "Error: Missing table name";
+            return false;
+        }
+        //TODO verify if table name is valid
+
+        token = strtok(NULL, " (");
+        if (!token || strcmp(token, "values") != 0) {
+            cout << "Error: Supposed to write 'values'";
+            return false;
+        }
+
+        int columnCount = 3;
+        int i = 0;
+        while (i != columnCount) {
+            token = strtok(NULL, " ,");
+            if (!token) {
+                cout << "Error: Missing comma or invalid column number";
+                return false;
+            }
+            i++;
+        }
+
         return true;
     }
 //    SELECT (at_least_one_column, ...) | ALL FROM table_name
