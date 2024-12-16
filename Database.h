@@ -20,6 +20,13 @@ public:
             this->name[i] = newName[i];
         }
     }
+    static bool processDisplayTable(const char* command) {
+        CommandValidator::validateDisplayTable(command);
+    }
+    static bool processDropTable(const char* command) {
+        CommandValidator::validateDropTable(command);
+        return true;
+    }
     static bool processInsertInto(const char* command) {
         CommandValidator::validateInsertInto(command);
         return true;

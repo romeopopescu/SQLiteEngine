@@ -29,6 +29,12 @@ int main() {
         else if (strstr(statement, "select") != nullptr) {
             Database::processSelectFrom(statement);
         }
+        else if (strstr(statement, "drop table") != nullptr) {
+            Database::processDropTable(statement);
+        }
+        else if (strstr(statement, "display table") != nullptr) {
+            Database::processDisplayTable(statement);
+        }
         else if (strstr(statement, "exit") != nullptr) {
             cout << "Exiting sqlite...";
             isRunning = false;

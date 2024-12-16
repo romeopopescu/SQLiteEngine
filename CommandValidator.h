@@ -4,6 +4,71 @@
 
 class CommandValidator {
 public:
+    static bool validateDelete(const char* commnand) {
+
+    }
+    static bool validateUpdate(const char* command) {
+        return true;
+    }
+    static bool validateDisplayTable(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
+
+        char* token = strtok(temp, " ");
+        if (!token || strcmp(token, "display") != 0) {
+            cout << "Error: invalid statement. Must start with 'display'";
+            return false;
+        }
+
+        token = strtok(NULL, " ");
+        if (!token || strcmp(token, "table") != 0) {
+            cout << "Error: invalid statement. Must be like 'display table table_name'";
+            return false;
+        }
+
+        token = strtok(NULL, " ;");
+        if (!token) {
+            cout << "Error: Missing table name";
+            return false;
+        }
+
+        token = strtok(NULL, " ");
+        if (token) {
+            cout << "Error: Too many table names";
+            return false;
+        }
+        return true;
+    }
+    static bool validateDropTable(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
+
+        char* token = strtok(temp, " ");
+        if (!token || strcmp(token, "drop") != 0) {
+            cout << "Error: invalid statement. Must start with 'drop'";
+            return false;
+        }
+
+        token = strtok(NULL, " ");
+        if (!token || strcmp(token, "table") != 0) {
+            cout << "Error: invalid statement. Must be like 'drop table table_name'";
+            return false;
+        }
+
+        token = strtok(NULL, " ;");
+        if (!token) {
+            cout << "Error: Missing table name.";
+            return false;
+        }
+
+        token = strtok(NULL, " ,");
+        if (token) {
+            cout << "Error: Too many table names.";
+            return false;
+        }
+
+        return true;
+    }
 
 //    INSERT INTO nume_tabela VALUES(...); valorile sunt separate prin, și au numărul și ordinea exacta ca definiția tabelului
     static bool validateInsertInto(const char* command) {
