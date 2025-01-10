@@ -10,6 +10,7 @@ public:
     static bool validateUpdate(const char* command) {
         return true;
     }
+
     static bool validateDisplayTable(const char* command) {
         char temp[1024];
         strcpy(temp, command);

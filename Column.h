@@ -16,6 +16,10 @@ private:
 public:
     Column() {}
 
+    Column(const char* name) {
+        this->setName(name);
+    }
+
     Column(const char* name, Type type, int size, const char* defVal) {
         this->setName(name);
         this->setType(type);
