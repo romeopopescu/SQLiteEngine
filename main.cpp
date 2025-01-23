@@ -46,7 +46,6 @@ int main() {
 
     }
 
-//    tokenizer(statement);
     return 0;
 }
 
