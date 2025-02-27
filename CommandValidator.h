@@ -8,6 +8,16 @@ public:
 
     }
     static bool validateUpdate(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
+
+        char* token = strtok(temp, " ");
+
+        if (!token || strcmp(token, "update") != 0) {
+            cout << "Erro: invalid statement. Must start with 'update'";
+            return false;
+        }
+
         return true;
     }
 
