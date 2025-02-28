@@ -4,9 +4,10 @@
 
 class Database {
 private:
+    //check initialization value for the tables pointer
     char* name = nullptr;
     Table** tables = nullptr;
-    int tableNo = 0;
+    int tableCount = 0;
 
 public:
     Database() {}
@@ -15,10 +16,9 @@ public:
         this->setName(name);
     }
     void setName(const char* newName) {
-        this->name = new char[sizeof(newName)];
-        for (int i = 0; i < sizeof(newName); i++) {
-            this->name[i] = newName[i];
-        }
+        delete[] this->name;
+        this->name = new char[strlen(newName) + 1];
+        strcpy(this->name, newName);
     }
     static bool processDisplayTable(const char* command) {
         CommandValidator::validateDisplayTable(command);
@@ -38,6 +38,10 @@ public:
         }
         return false;
     }
+    static bool processDeleteFrom(const char* command) {
+        CommandValidator::validateDeleteFrom(command);
+        return true;
+    }
 
     static bool processCreateTable(const char* command) {
         if (CommandValidator::validateCreateTable(command)) {
@@ -49,7 +53,7 @@ public:
             token = strtok(NULL, " ");
             token = strtok(NULL, " ");
             Table* table = new Table(token);
-//            create table names ((column1, integer, 10, 12),(column2, float, 10, 13.34));
+//            create table name ((column1, integer, 10, 12),(column2, float, 10, 13.34));
 //            //creating columns
             // Move inside the column definitions
             token = strtok(NULL, "("); // Skip first '('
@@ -92,5 +96,14 @@ public:
 
         return false;
     }
+
+    ~Database() {
+        delete[] name;
+        for (int i = 0; i < tableCount; i++) {
+            delete tables[i];
+        }
+        delete[] tables;
+    }
+
 
 };

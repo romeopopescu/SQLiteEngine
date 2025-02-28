@@ -8,4 +8,5 @@ add_executable(SQLiteEngine main.cpp
         Column.h
         Database.h
         CommandValidator.h
+        DataConfiguration.h
 )

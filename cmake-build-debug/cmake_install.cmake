@@ -1,4 +1,4 @@
-# Install script for directory: /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine
+# Install script for directory: /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

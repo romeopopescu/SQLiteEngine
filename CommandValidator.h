@@ -4,8 +4,22 @@
 
 class CommandValidator {
 public:
-    static bool validateDelete(const char* commnand) {
+    static bool validateDeleteFrom(const char* command) {
+        char temp[1024];
+        strcpy(temp, command);
 
+        char* token = strtok(temp, " ");
+        if (!token || strcmp(token, "delete") != 0) {
+            cout << "Error: invalid statement. Must start with 'delete'";
+            return false;
+        }
+
+        token = strtok(NULL, " ");
+        if (!token || strcmp(token, "from") != 0) {
+            cout << "Error: invalid statement. Must start with 'delete from'";
+            return false;
+        }
+        return true;
     }
     static bool validateUpdate(const char* command) {
         char temp[1024];
@@ -14,7 +28,7 @@ public:
         char* token = strtok(temp, " ");
 
         if (!token || strcmp(token, "update") != 0) {
-            cout << "Erro: invalid statement. Must start with 'update'";
+            cout << "Error: invalid statement. Must start with 'update'";
             return false;
         }
 
@@ -180,19 +194,19 @@ public:
 
         token = strtok(temp, " ");
         if (!token || strcmp(token, "create") != 0) {
-            cout << "Error: command must start with CREATE";
+            cout << "Error: command must start with CREATE" << endl << "Structure: CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)\n The command should receive at least 1 column;";
             return false;
         }
 
         token = strtok(NULL, " ");
         if (!token || strcmp(token, "table") != 0) {
-            cout << "Error: command should have TABLE keyword, after CREATE";
+            cout << "Error: command should have TABLE keyword, after CREATE" << endl << "Structure: CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)\n The command should receive at least 1 column;";
             return false;
         }
 
         token = strtok(NULL, " ");
         if (!token) {
-            cout << "Error: Missing name";
+            cout << "Error: Missing name" << endl << "Structure: CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)\n The command should receive at least 1 column;";
             return false;
         }
         char tableName[100];
@@ -219,7 +233,7 @@ public:
             if (!token) return false;
             //token is column type
             if(strcmp(token, "text") != 0 && strcmp(token, "integer") != 0 && strcmp(token, "float") != 0) {
-                cout << "Error: Invalid column type";
+                cout << "Error: Invalid column type" << endl << "Structure: CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)\n The command should receive at least 1 column;";
                 return false;
             }
 
@@ -228,7 +242,7 @@ public:
             if (!token) return false;
             for (i = 0; i < strlen(token); i++) {
                 if (!isdigit(token[i])) {
-                    cout << "Error: Size is not a number";
+                    cout << "Error: Size is not a number" << endl << "Structure: CREATE TABLE table_name [IF NOT EXISTS] ((column_1_name,type,size, default_value), (column_2_name,type,size, default_value), …)\n The command should receive at least 1 column;";
                     return false;
                 }
             }

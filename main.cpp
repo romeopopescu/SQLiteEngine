@@ -9,6 +9,9 @@ int main() {
     char statement[COMMAND_SIZE];
     bool isRunning = true;
 
+    ofstream outputFile("./Output/out");
+
+
     cout << "Enter sqlite commands:";
 
     while(isRunning) {
@@ -34,6 +37,9 @@ int main() {
         }
         else if (strstr(statement, "display table") != nullptr) {
             Database::processDisplayTable(statement);
+        }
+        else if (strstr(statement, "delete from") != nullptr) {
+            Database::processDeleteFrom(statement);
         }
         else if (strstr(statement, "exit") != nullptr) {
             cout << "Exiting sqlite...";

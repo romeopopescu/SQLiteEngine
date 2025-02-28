@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/
+cmake_ninja_workdir = /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target SQLiteEngine
 
@@ -49,8 +49,14 @@ cmake_ninja_workdir = /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-buil
 
 build cmake_object_order_depends_target_SQLiteEngine: phony || CMakeFiles/SQLiteEngine.dir
 
-build CMakeFiles/SQLiteEngine.dir/main.cpp.o: CXX_COMPILER__SQLiteEngine_unscanned_Debug /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/main.cpp || cmake_object_order_depends_target_SQLiteEngine
+build CMakeFiles/SQLiteEngine.dir/main.cpp.o: CXX_COMPILER__SQLiteEngine_unscanned_Debug /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/main.cpp || cmake_object_order_depends_target_SQLiteEngine
   DEP_FILE = CMakeFiles/SQLiteEngine.dir/main.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/SQLiteEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/SQLiteEngine.dir
+
+build CMakeFiles/SQLiteEngine.dir/DataConfiguration.cpp.o: CXX_COMPILER__SQLiteEngine_unscanned_Debug /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/DataConfiguration.cpp || cmake_object_order_depends_target_SQLiteEngine
+  DEP_FILE = CMakeFiles/SQLiteEngine.dir/DataConfiguration.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/SQLiteEngine.dir
   OBJECT_FILE_DIR = CMakeFiles/SQLiteEngine.dir
@@ -63,7 +69,7 @@ build CMakeFiles/SQLiteEngine.dir/main.cpp.o: CXX_COMPILER__SQLiteEngine_unscann
 #############################################
 # Link the executable SQLiteEngine
 
-build SQLiteEngine: CXX_EXECUTABLE_LINKER__SQLiteEngine_Debug CMakeFiles/SQLiteEngine.dir/main.cpp.o
+build SQLiteEngine: CXX_EXECUTABLE_LINKER__SQLiteEngine_Debug CMakeFiles/SQLiteEngine.dir/main.cpp.o CMakeFiles/SQLiteEngine.dir/DataConfiguration.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/SQLiteEngine.dir
   POST_BUILD = :
@@ -76,7 +82,7 @@ build SQLiteEngine: CXX_EXECUTABLE_LINKER__SQLiteEngine_Debug CMakeFiles/SQLiteE
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug && /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug && /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -87,7 +93,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug && /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine -B/home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug
+  COMMAND = cd /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug && /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine -B/home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -103,7 +109,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/cmake-build-debug
+# Folder: /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/cmake-build-debug
 
 build all: phony SQLiteEngine
 
@@ -114,14 +120,14 @@ build all: phony SQLiteEngine
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/CMakeLists.txt /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/CMakeLists.txt /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/romeo/1FACULTATE/AN3SEM1/oop/SQLiteEngine/CMakeLists.txt /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build /home/romeo/1facultate/AN3SEM1/oop/SQLiteEngine/CMakeLists.txt /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/romeo/CLion/clion-2023.3.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
 
 
 #############################################

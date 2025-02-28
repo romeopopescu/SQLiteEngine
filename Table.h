@@ -3,7 +3,7 @@
 #include "Row.h"
 #include "Column.h"
 
-class Table{
+class Table {
 private:
     char* name = nullptr;
     Row** rows = new Row*[20];
@@ -21,10 +21,10 @@ public:
         this->rows = nullptr;
     }
     void setName(const char* newName) {
+        delete[] this->name;
         this->name = new char[sizeof(newName)];
-        for (int i = 0; i < sizeof(newName); i++) {
-            this->name[i] = newName[i];
-        }
+        strcpy(this->name, newName);
+
     }
     void printTableName() {
         printf("%s", this->name);
@@ -53,8 +53,23 @@ public:
 //    void addRow(const Row& row);
 //    Row* getRow(int index);
 
-    void addRow(char* words[20]) {
+    void addRow(const char* words[20]) {
+        cout << endl << "add row method";
+        if (this->rowCount < 20) {
+            rows[rowCount++] = new Row(words);
+        }
+    }
 
+    ~Table() {
+        delete[] name;
+        for (int i = 0; i < rowCount; i++) {
+            delete rows[i];
+        }
+        delete[] rows;
+        for (int i = 0; i < columnCount; i++) {
+            delete columns[i];
+        }
+        delete[] columns;
     }
 
 };
